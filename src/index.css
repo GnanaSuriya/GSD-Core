@@ -5,3 +5,20 @@
     @apply bg-zinc-950 text-slate-50 antialiased;
   }
 }
+
+@layer utilities {
+  .page-transition {
+    animation: fadeInSlideUp 0.4s ease-out forwards;
+  }
+}
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

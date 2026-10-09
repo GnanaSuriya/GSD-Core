@@ -12,9 +12,9 @@ export const creatorData = {
     joinDate: '[Join Date Placeholder]'
   },
   socialLinks: [
-    { platform: 'YouTube', url: 'https://youtube.com/@A2DChannel', icon: 'youtube' },
-    { platform: 'Instagram', url: '[Instagram URL Placeholder]', icon: 'instagram' },
-    { platform: 'Twitter', url: '[Twitter URL Placeholder]', icon: 'twitter' },
+    { platform: 'YouTube', url: 'https://youtube.com/@a2dchannel', icon: 'youtube', handle: '@a2dchannel' },
+    { platform: 'Instagram', url: 'https://www.instagram.com/a2d_army/', icon: 'instagram', handle: '@a2d_army' },
+    { platform: 'Twitter / X', url: 'https://twitter.com/a2darmy', icon: 'twitter', handle: '@a2darmy' }
   ],
   milestones: [
     { year: '[Year Placeholder]', title: 'Channel Created', description: 'Started the A2D Channel journey.' },

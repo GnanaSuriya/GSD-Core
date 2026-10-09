@@ -5,6 +5,7 @@ import About from './pages/About';
 import Videos from './pages/Videos';
 import Community from './pages/Community';
 import Connect from './pages/Connect';
+import Admin from './pages/Admin';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="videos" element={<Videos />} />
           <Route path="community" element={<Community />} />
           <Route path="connect" element={<Connect />} />
+          <Route path="admin" element={<Admin />} />
         </Route>
       </Routes>
     </BrowserRouter>
