@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Footer() {
   return (
     <footer className="bg-zinc-950 border-t border-zinc-800 py-12 mt-16">
@@ -8,7 +10,7 @@ export default function Footer() {
         <div className="flex gap-4">
           <a href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
           <a href="#" className="text-zinc-400 hover:text-white transition-colors text-sm">Terms of Service</a>
-          <a href="/admin" className="text-zinc-700 hover:text-blue-500 transition-colors text-sm ml-4">Admin Access</a>
+          <Link to="/admin" className="text-zinc-700 hover:text-blue-500 transition-colors text-sm ml-4">Admin Access</Link>
         </div>
       </div>
     </footer>
