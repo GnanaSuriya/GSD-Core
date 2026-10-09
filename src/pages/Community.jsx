@@ -31,24 +31,27 @@ export default function Community() {
     setErrorMessage('');
     
     try {
-      const { error } = await supabase
-        .from('community_members')
-        .insert([
-          { 
-            name: formData.name, 
-            email: formData.email, 
-            favorite_video: formData.favoriteVideo,
-            message: formData.message 
-          }
-        ]);
+      const response = await fetch('/api/community', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name, 
+          email: formData.email, 
+          favoriteVideo: formData.favoriteVideo,
+          message: formData.message 
+        })
+      });
 
-      if (error) {
-        // Handle duplicate email (unique constraint violation)
-        if (error.code === '23505') {
+      const result = await response.json();
+
+      if (!response.ok) {
+        if (response.status === 409) {
           setFormState('duplicate');
         } else {
-          console.error("Supabase Error:", error.message, "Code:", error.code, "Details:", error.details, "Hint:", error.hint);
-          setErrorMessage(`${error.message} (Code: ${error.code})`);
+          console.error("API Error:", result.error, "Code:", result.code);
+          setErrorMessage(`${result.error} (Code: ${result.code || 'unknown'})`);
           setFormState('error');
         }
       } else {
